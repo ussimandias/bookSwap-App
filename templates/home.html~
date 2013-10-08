@@ -1,0 +1,49 @@
+<html>
+<head><div style="hieght:1000; width:800;"></div>
+    <title> Hopepage | Log in </title>
+</head> <div style=" hieght:200;"><div id="menu" style="background-color:orange;height:500px;width:150px;float:left;">
+<b>Menu</b><br>
+Add<br> 
+<a href="{% url Buy %}">Buy</a><br>
+<a href="{% url Sale %}">Sale<a><br>
+</div>
+        <body style="background-color:lightblue;">
+
+
+
+<form style="text-align:right;" action="{% url search %}">
+        <input type='text' name='search' value=''><br>
+        <input type='submit' value='Search'>
+    </form>
+            
+<p style="text-align:center;"> We have the following <br>{{ booklog }} book{{booklog|pluralize}} </a> on the book shelf</p><br>
+<p style="text-align:center;"> <a href= "{% url Buy %}" </a></p>
+    {% if login.is_authenticated %}
+<p style="text-align:center;"> Welcome {{login}}
+<a href="{% url logout %}"> Log out</p>
+
+    {% else%}
+<p style="text-align:center;"> Please sign in
+
+<form  style=" text-align:center;" name="input" action="{% url login %}" method="POST">
+    {% csrf_token %}
+
+Username<input type="username" name="username">
+Password<input type="password" name="password">
+<input type="submit" action='' value="Log in">
+</form>
+</p>
+    {% endif %}
+<p style="text-align:center;"><img src="/static/books.jpg" width=250 hieght=250/>
+
+<img src="/static/books1.jpg" width=250 hieght=250/</a>
+<img src="/static/boooks.jpg" width=150 hieght=150/></p>
+<hr> 
+
+</div>
+<br>
+
+
+</body>
+</html>
+

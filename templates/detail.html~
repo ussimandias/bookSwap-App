@@ -1,0 +1,16 @@
+<html>
+<body style="background-color:green;">
+<head>
+<h1></h1>
+</head>
+<body>
+ <h1>Title: {{book.Title}}</h1>
+<h2>Author: {{book.author}}</h2>
+<h3>About: {{book.body}}</h3>
+<h4>Condition: {{book.rating}}</4>
+
+
+<body/>
+
+
+</html>

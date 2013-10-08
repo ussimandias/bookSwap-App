@@ -1,0 +1,43 @@
+<html>
+<body style="background-color:lightblue;">
+    <head>
+    <title> Bookswap | Booklist..</title>
+    </head>
+        <body><div id="content" style="background-color:#EEEEEE;height:900px;width:390px;float:left;">
+             we have ....
+<p> check out the ..{{books|length}} book {{books|pluralize}} we've got so far..</p>
+<ol>
+    {% for b in books %}
+
+    <li> <a href=" {% url detail b.id%} ">{{b.Title}}</a></li>
+        {% endfor %}
+
+</ol>          
+
+    <a href="{% url home %}">link</a></div>
+
+<div id="content" style="background-color:#EEEEEE;height:900px;width:360px;float:right;">
+<ol>
+    {% for b in titles %}
+
+    <li> <a href=" {% url detail b.id%} ">{{b.Title}}</a></li>
+        {% endfor %}
+
+</ol> 
+
+<form method="POST">
+        {% csrf_token %}
+         add  wishlist of books you want to buy below.
+        {{form.as_p}}
+        <input type='submit' value='Add'>
+
+
+    </form>
+<hr>
+</div>
+
+</body>
+</html>
+
+
+     

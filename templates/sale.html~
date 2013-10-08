@@ -1,0 +1,30 @@
+<html>
+<body style="background-color:lightblue;">
+<head>
+    <title> Bookswap | Sell </title>
+</head> 
+        <body>
+            <p><h1> here's a list of what students are selling on campus!</h1></p>
+            
+    <ol>
+      {% for b in list %}
+
+         <li>{{b.Owner}} is selling {{b.Title }} written by {{b.author}} </li> 
+    
+     {% endfor %}  
+
+    </ol>
+
+<a href="{% url books %}">link</a>
+
+<form method="POST">
+        {% csrf_token %}
+        <h3>You may enter the book you wish to sell below...</h3>
+        {{form.as_p}}
+        <input type='submit' value='Add'>
+
+
+    </form>
+
+</body>
+</html>

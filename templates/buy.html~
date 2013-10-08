@@ -1,0 +1,39 @@
+<html>
+<body style="background-color:skyblue;">
+<head>
+    <title> Bookswap | Buy </title>
+</head> 
+        <body>
+            <h2> Welcome to Bookswap </h2><br>
+
+<ol>
+      {% for b in list2 %}
+
+         <li>{{b.Owner}} wants to buy {{b.Title }} written by {{b.author}} </li> 
+    
+     {% endfor %}  
+
+    </ol>
+
+            <a href="{% url home %}">Back to Homepage</a>
+
+<ol>
+    {% for b in titles %}
+
+    <li> <a href=" {% url detail b.id%} ">{{b.Title}}</a></li>
+        {% endfor %}
+
+</ol> 
+
+<form method="POST">
+        {% csrf_token %}
+        <h2> Tell other students what you're looking for...</h2>
+        {{form.as_p}}
+        <input type='submit' value='Add'>
+
+
+    </form>
+
+
+</body>
+</html>

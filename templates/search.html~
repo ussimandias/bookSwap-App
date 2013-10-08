@@ -1,0 +1,17 @@
+<html>
+<head> <title> Books | Titles </title>
+<h1>search results</h1>
+</head>
+<body>
+<ol>
+{% for b in books %}
+<li><h1> Title: {{b.Title}}</h1>
+<h2>Author: {{b.author}}</h2>
+<h3>About: {{b.body}}</h3>
+<h4>Condition: {{b.rating}}</4>
+{% endfor %}
+
+</ol>
+<a href="{% url home %}">Back to homepage </a>
+</body>
+</html>
